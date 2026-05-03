@@ -1,32 +1,51 @@
-const d = document.getElementById("display");
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll("button");
 
-function write(v){
-if(d.value === "Error") d.value = "";
-d.value += v;
+buttons.forEach(btn=>{
+btn.addEventListener("click",(e)=>{
+e.preventDefault();
+
+let val = btn.innerText;
+
+if(val === "C"){
+display.value = "";
 }
-
-function reset(){
-d.value = "";
+else if(val === "Del"){
+display.value = display.value.slice(0,-1);
 }
-
-function remove(){
-d.value = d.value.slice(0,-1);
-}
-
-function solve(){
+else if(val === "="){
 try{
-if(d.value === "") return;
-d.value = eval(d.value);
+display.value = eval(display.value);
 }catch{
-d.value = "Error";
+display.value = "Error";
+}
+}
+else{
+if(display.value === "Error") display.value="";
+display.value += val;
+}
+});
+});
+
+document.addEventListener("keydown",(e)=>{
+if(!isNaN(e.key)) display.value += e.key;
+if(["+","-","*","/"].includes(e.key)) display.value += e.key;
+
+if(e.key === "Enter"){
+try{
+display.value = eval(display.value);
+}catch{
+display.value = "Error";
 }
 }
 
-document.addEventListener("keydown", (e)=>{
-if(!isNaN(e.key)) write(e.key);
-if(["+","-","*","/"].includes(e.key)) write(e.key);
-if(e.key === "Enter") solve();
-if(e.key === "Backspace") remove();
-if(e.key === ".") write(".");
-if(e.key === "Escape") reset();
+if(e.key === "Backspace"){
+display.value = display.value.slice(0,-1);
+}
+
+if(e.key === "Escape"){
+display.value = "";
+}
+
+if(e.key === ".") display.value += ".";
 });
