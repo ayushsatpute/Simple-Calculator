@@ -1,34 +1,32 @@
-let screen=document.getElementById("screen");
+let d=document.getElementById("display");
 
-function appendValue(v){
-if(screen.value==="Error")screen.value="";
-screen.value+=v;
+function write(v){
+if(d.value==="Error") d.value="";
+d.value+=v;
 }
 
-function clearScreen(){
-screen.value="";
+function reset(){
+d.value="";
 }
 
-function removeLast(){
-screen.value=screen.value.slice(0,-1);
+function remove(){
+d.value=d.value.slice(0,-1);
 }
 
-function calculate(){
+function solve(){
 try{
-let exp=screen.value;
-if(exp==="")return;
-screen.value=Function("return "+exp)();
-}
-catch{
-screen.value="Error";
+if(d.value==="") return;
+d.value=Function("return "+d.value)();
+}catch{
+d.value="Error";
 }
 }
 
 document.addEventListener("keydown",e=>{
-if(!isNaN(e.key))appendValue(e.key);
-if(["+","-","*","/"].includes(e.key))appendValue(e.key);
-if(e.key==="Enter")calculate();
-if(e.key==="Backspace")removeLast();
-if(e.key===".")appendValue(".");
-if(e.key==="Escape")clearScreen();
+if(!isNaN(e.key)) write(e.key);
+if(["+","-","*","/"].includes(e.key)) write(e.key);
+if(e.key==="Enter") solve();
+if(e.key==="Backspace") remove();
+if(e.key===".") write(".");
+if(e.key==="Escape") reset();
 });

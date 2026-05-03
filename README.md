@@ -1,34 +1,47 @@
-Simple Calculator
+# simple-calculator
 
-This project is a basic calculator built using HTML, CSS, and JavaScript. It performs simple arithmetic operations like addition, subtraction, multiplication, and division.
+A lightweight calculator built using HTML, CSS, and JavaScript.
+It performs basic arithmetic operations with a clean and minimal interface.
 
-Features
+## Features
 
-- Basic calculations
-- Keyboard support
-- Clean user interface
-- Responsive layout
+* Addition, subtraction, multiplication and division
+* Keyboard input support
+* Compact and responsive layout
+* Instant calculation results
+* Error handling for invalid inputs
 
-How to run
+## Tech Stack
 
-Download or clone the repository
+* HTML
+* CSS
+* JavaScript
 
-Open the project folder
+## Usage
 
-Open index.html in any browser
+1. Clone or download the repository
+2. Open the project folder
+3. Run `index.html` in your browser
 
-Tech stack
+## Keyboard Controls
 
-HTML  
-CSS  
-JavaScript
+* 0–9 → Numbers
+* +, -, *, / → Operations
+* Enter → Calculate
+* Backspace → Delete last input
+* Escape → Clear screen
 
-Purpose
+## Purpose
 
-This project was created to practice frontend development and improve JavaScript logic building skills.
+This project was created to practice core frontend concepts and improve problem-solving skills using JavaScript.
 
-Future improvements
+## Future Scope
 
-- Dark/light mode toggle
-- Better mobile responsiveness
-- Improved UI animations
+* Add UI animations
+* Improve mobile experience
+* Add scientific functions
+* Add calculation history
+
+## Author
+
+Ayush Satpute
