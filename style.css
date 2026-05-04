@@ -28,8 +28,10 @@ font-size:28px;
 text-align:right;
 padding:10px;
 background:#e4e4e4;
-box-shadow:inset 2px 2px 5px #c9c9c9,
-           inset -2px -2px 5px #ffffff;
+box-shadow:
+inset 2px 2px 5px #c9c9c9,
+inset -2px -2px 5px #ffffff,
+0 0 10px rgba(37,99,235,0.3);
 }
 
 .pad{
@@ -47,9 +49,15 @@ cursor:pointer;
 background:#e4e4e4;
 box-shadow:3px 3px 6px #c9c9c9,
            -3px -3px 6px #ffffff;
+transition:0.2s;
+}
+
+button:hover{
+transform:scale(1.05);
 }
 
 button:active{
+transform:scale(0.95);
 box-shadow:inset 2px 2px 5px #c9c9c9,
            inset -2px -2px 5px #ffffff;
 }
@@ -64,4 +72,5 @@ grid-row:4 / 6;
 background:#2563eb;
 color:#fff;
 font-weight:600;
+box-shadow:0 0 10px rgba(37,99,235,0.5);
 }
